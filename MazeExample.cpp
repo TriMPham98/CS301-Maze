@@ -43,6 +43,7 @@ SolveMaze(int row, int col, char maze[][100], int rowSz, int colSz, bool &foundE
         return;
     }
 
+    // Base case: if the current position has already been visited or is a wall, return immediately
     if (maze[row][col] == '.' || maze[row][col] == '@') {
         return;
     }
