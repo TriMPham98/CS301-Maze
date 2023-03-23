@@ -87,17 +87,22 @@ int main() {
     while (getline(mazeFile, line)) {
         cout << line << endl;
         for (int i = 0; i < (int) line.length(); i++) {
+            // Fill the current row of the maze array with the characters from the current line
             maze[row][i] = line[i];
+
             if (maze[row][i] == 'S') {
+                // If the starting point is found, store its coordinates and mark it as an empty space
                 startRow = row;
                 startCol = i;
                 maze[row][i] = ' ';
             }
         }
+        // Move to the next row of the maze array
         row++;
     }
 
     cout << "Start Position: (" << startRow << "," << startCol << ")" << endl;
+    // Output the starting position to the console for visualization
 
     // figure out the number of rows and columns
     int rowSz = row;
@@ -107,8 +112,11 @@ int main() {
 
     string finaldir = "";
     string currDir = "";
+
+    // Call the SolveMaze function to find the path from the starting point to the ending point
     SolveMaze(startRow, startCol, maze, rowSz, colSz, foundEnd, currDir, finaldir);
 
+    // Output the final path to the console for visualization
     cout << "Directions: " << finaldir << endl;
 
     // Print out the maze with the path shown
