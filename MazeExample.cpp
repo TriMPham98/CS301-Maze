@@ -56,7 +56,10 @@ SolveMaze(int row, int col, char maze[][100], int rowSz, int colSz, bool &foundE
         return;
     }
 
+    // Mark the current position as visited with a dot (".")
     maze[row][col] = '.';
+
+    // Recursively call the SolveMaze function for each of the four directions (up, down, left, and right)
     SolveMaze(row - 1, col, maze, rowSz, colSz, foundEnd, currDir + "U", finalDir); // N
     SolveMaze(row + 1, col, maze, rowSz, colSz, foundEnd, currDir + "D", finalDir); // S
     SolveMaze(row, col + 1, maze, rowSz, colSz, foundEnd, currDir + "R", finalDir); // E
