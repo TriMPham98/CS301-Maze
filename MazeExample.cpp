@@ -24,6 +24,16 @@ using namespace std;
 
 void
 SolveMaze(int row, int col, char maze[][100], int rowSz, int colSz, bool &foundEnd, string currDir, string &finalDir) {
+    // Recursive function to find a path from the starting point to the ending point in the maze.
+    // Arguments:
+    // row, col: the current row and column of the algorithm
+    // maze: the 2D array representing the maze
+    // rowSz, colSz: the number of rows and columns in the maze
+    // foundEnd: a reference to a boolean variable that indicates whether the ending point has been found
+    // currDir: a string representing the current direction the algorithm is moving in
+    // finalDir: a reference to a string that will store the final path from the starting point to the ending point
+
+    // Base case: if the ending point has been found, return immediately
     if (foundEnd) {
         return;
     }
