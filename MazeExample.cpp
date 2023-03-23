@@ -38,6 +38,7 @@ SolveMaze(int row, int col, char maze[][100], int rowSz, int colSz, bool &foundE
         return;
     }
 
+    // Base case: if the current position is out of bounds, return immediately
     if (row < 0 || col < 0 || row >= rowSz || col >= colSz) {
         return;
     }
