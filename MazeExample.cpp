@@ -67,10 +67,13 @@ SolveMaze(int row, int col, char maze[][100], int rowSz, int colSz, bool &foundE
 }
 
 int main() {
+    // Open the maze file for reading
     ifstream mazeFile("maze.txt");
-    char maze[100][100]; // make larger than required
 
-    // Initialize the maze
+    // Make larger than required
+    char maze[100][100];
+
+    // Initialize the 2D array to store the maze
     for (int i = 0; i < 100; i++)
         for (int j = 0; j < 100; j++) {
             maze[i][j] = ' ';
@@ -79,7 +82,7 @@ int main() {
     int row = 0;
     int startRow, startCol;
 
-    // Read the file line by line an initialize the maze
+    // Read the file line by line and initialize the maze
     string line;
     while (getline(mazeFile, line)) {
         cout << line << endl;
